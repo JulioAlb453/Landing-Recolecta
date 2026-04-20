@@ -1,3 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
-
 @import 'tailwindcss';
+
+/* Paleta institucional y tipografía para Juntos por un Chiapas Limpio */
+@theme {
+  /* Verde institucional base #519638 y variantes derivadas */
+  --color-brand-dark: #519638;        /* Verde principal (fondos amplios) */
+  --color-brand-darker: #3d7329;      /* Verde profundo (franja de estadísticas, hover) */
+  --color-brand-deepest: #2c5220;     /* Verde más oscuro (sombras, overlays) */
+  --color-brand-card: #457f30;        /* Fondo de tarjetas sobre el verde principal */
+  --color-brand-border: #6aaf49;      /* Borde sutil sobre el verde principal */
+  --color-brand-soft: #7bbc5c;        /* Verde claro para acentos secundarios */
+
+  /* Acento naranja y tonos cálidos */
+  --color-brand-accent: #718096;
+  --color-brand-accent-soft: #ede5d0;
+  --color-brand-accent-light: #63bcbc;
+
+  /* Texto y neutros */
+  --color-brand-cream: #ede5d0;        /* Fondo "blanco" institucional */
+  --color-brand-cream-muted: #c8c0a8;  /* Separadores/labels sobre crema */
+  --color-brand-ink: #0e1f08;          /* Negro con matiz verde para texto */
+  --color-brand-ink-soft: #3b4a32;     /* Texto secundario verdoso */
+
+  --font-sans: 'Poppins', 'Roboto', system-ui, -apple-system, Segoe UI, sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: var(--color-brand-cream);
+  color: var(--color-brand-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

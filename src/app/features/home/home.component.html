@@ -1,0 +1,111 @@
+<!-- Vista principal (Home) del proyecto Juntos por un Chiapas Limpio -->
+<section class="relative overflow-hidden bg-brand-cream">
+  <div class="mx-auto grid max-w-6xl gap-12 px-6 pt-10 pb-16 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16 lg:pt-16">
+    <!-- Columna izquierda: copy principal -->
+    <div class="flex flex-col gap-8">
+      <!-- Badge -->
+      <span class="inline-flex w-fit items-center gap-2 rounded-full border border-brand-dark/30
+                   bg-brand-dark/10 px-4 py-1.5 text-xs font-semibold tracking-[0.14em]
+                   text-brand-dark uppercase">
+        <span class="h-2 w-2 rounded-full bg-brand-dark"></span>
+        {{ content.badge }}
+      </span>
+
+      <!-- Título con resaltado -->
+      <h1 class="text-[3rem] leading-[1.05] font-extrabold tracking-tight text-brand-ink
+                 sm:text-[3.5rem] lg:text-[4.25rem]">
+        @for (part of content.title; track $index) {
+          <span [class.text-brand-dark]="part.highlight">{{ part.text }}</span>
+        }
+      </h1>
+
+      <!-- Descripción -->
+      <p class="max-w-xl text-base leading-relaxed text-brand-ink/75 sm:text-lg">
+        {{ content.description }}
+      </p>
+
+      <!-- Botones de acción -->
+      <div class="flex flex-wrap gap-4">
+        @for (cta of content.ctas; track cta.label) {
+          <a [href]="cta.href"
+             [class]="cta.variant === 'primary'
+               ? 'inline-flex items-center gap-2 rounded-full bg-brand-dark px-6 py-3 text-sm font-semibold text-brand-cream shadow-sm transition hover:bg-brand-darker'
+               : 'inline-flex items-center gap-2 rounded-full border border-brand-dark px-6 py-3 text-sm font-semibold text-brand-dark transition hover:bg-brand-dark/5'">
+            <span>{{ cta.label }}</span>
+            @if (cta.external) {
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                   stroke-linejoin="round" class="h-4 w-4">
+                <path d="M7 17 17 7"/><path d="M8 7h9v9"/>
+              </svg>
+            }
+          </a>
+        }
+      </div>
+    </div>
+
+    <!-- Columna derecha: tarjetas destacadas -->
+    <div class="flex flex-col gap-4 lg:pt-12">
+      @for (card of content.highlights; track card.title) {
+        <article class="flex items-center gap-4 rounded-2xl border border-brand-dark/15
+                        bg-white px-5 py-4 shadow-[0_10px_30px_-20px_rgba(46,125,50,0.35)]
+                        transition hover:border-brand-dark/40">
+          <span class="grid h-11 w-11 shrink-0 place-items-center rounded-full
+                       bg-brand-dark/10 text-brand-dark ring-1 ring-brand-dark/20">
+            <!-- Ícono según card.icon -->
+            @switch (card.icon) {
+              @case ('shield') {
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                     stroke-linejoin="round" class="h-5 w-5">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/>
+                </svg>
+              }
+              @case ('clock') {
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                     stroke-linejoin="round" class="h-5 w-5">
+                  <circle cx="12" cy="12" r="9"/>
+                  <path d="M12 7v5l3 2"/>
+                </svg>
+              }
+              @case ('users') {
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                     stroke-linejoin="round" class="h-5 w-5">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                  <circle cx="9" cy="7" r="4"/>
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+              }
+            }
+          </span>
+
+          <div class="flex flex-col">
+            <h3 class="text-sm font-semibold text-brand-ink">{{ card.title }}</h3>
+            <p class="text-xs text-brand-ink-soft">{{ card.subtitle }}</p>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+
+  <!-- Franja inferior de estadísticas -->
+  <div class="border-t border-brand-dark/15 bg-white/60">
+    <div class="mx-auto grid max-w-6xl grid-cols-2 gap-6 px-6 py-6 sm:grid-cols-4">
+      @for (stat of content.stats; track stat.value) {
+        <div class="flex flex-col">
+          <span [class]="stat.accent
+                  ? 'text-2xl font-extrabold text-brand-dark sm:text-3xl'
+                  : 'text-2xl font-extrabold text-brand-ink sm:text-3xl'">
+            {{ stat.value }}
+          </span>
+          @if (stat.label) {
+            <span class="text-xs text-brand-ink-soft">{{ stat.label }}</span>
+          }
+        </div>
+      }
+    </div>
+  </div>
+</section>
