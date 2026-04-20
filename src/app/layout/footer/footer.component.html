@@ -1,0 +1,44 @@
+<footer class="mt-auto w-full">
+  <section class="bg-brand-deepest px-6 py-12 text-brand-cream md:py-14">
+    <div class="mx-auto grid max-w-6xl gap-10 md:grid-cols-2 md:gap-16 lg:gap-24">
+      <div class="flex flex-col gap-4">
+        <p class="text-2xl font-bold tracking-tight md:text-3xl">
+          <span class="text-brand-cream">{{ content.brand.nameBeforeAccent }}</span><span
+          class="text-brand-soft">{{ content.brand.nameAccent }}</span>
+        </p>
+        <p class="max-w-md text-sm leading-relaxed text-brand-cream/85 md:text-[0.95rem]">
+          {{ content.brand.description }}
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-4 md:items-start">
+        <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-brand-soft">
+          {{ content.institutionsTitle }}
+        </h3>
+        <ul class="flex flex-col gap-2.5 text-sm text-brand-cream/90">
+          @for (item of content.institutions; track item) {
+            <li>
+              <span
+                class="border-b border-transparent transition hover:border-brand-border hover:text-brand-cream">
+                {{ item }}
+              </span>
+            </li>
+          }
+        </ul>
+      </div>
+    </div>
+
+    <div
+      class="mx-auto mt-12 max-w-6xl border-t border-brand-border/30 pt-8 md:mt-14 md:flex md:items-center md:justify-between md:pt-10">
+      <p class="text-center text-xs text-brand-cream/60 md:text-left">
+        {{ content.bottom.credits }}
+      </p>
+      <div class="mt-4 flex justify-center md:mt-0 md:justify-end">
+        <span
+          class="inline-flex rounded-full border-2 border-brand-soft px-4 py-2 text-xs font-semibold tracking-wide text-brand-soft">
+          {{ content.bottom.phoneLabel }}
+        </span>
+      </div>
+    </div>
+  </section>
+</footer>
