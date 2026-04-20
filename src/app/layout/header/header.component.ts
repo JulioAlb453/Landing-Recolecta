@@ -1,5 +1,7 @@
 import { Component, signal } from '@angular/core';
 
+import { headerEnterAnimation } from '../../shared/animations/page-enter.animations';
+
 interface NavLink {
   readonly label: string;
   readonly fragment: string;
@@ -10,6 +12,7 @@ interface NavLink {
   standalone: false,
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
+  animations: [headerEnterAnimation],
 })
 export class HeaderComponent {
   protected readonly navLinks: ReadonlyArray<NavLink> = [

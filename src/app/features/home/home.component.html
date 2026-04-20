@@ -1,10 +1,10 @@
 <!-- Vista principal (Home) del proyecto Juntos por un Chiapas Limpio -->
-<section class="relative overflow-hidden bg-brand-cream">
+<section [@homeEnter] class="relative overflow-hidden bg-brand-cream">
   <div class="mx-auto grid max-w-6xl gap-12 px-6 pt-10 pb-16 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16 lg:pt-16">
     <!-- Columna izquierda: copy principal -->
     <div class="flex flex-col gap-8">
       <!-- Badge -->
-      <span class="inline-flex w-fit items-center gap-2 rounded-full border border-brand-dark/30
+      <span class="home-enter-item inline-flex w-fit items-center gap-2 rounded-full border border-brand-dark/30
                    bg-brand-dark/10 px-4 py-1.5 text-xs font-semibold tracking-[0.14em]
                    text-brand-dark uppercase">
         <span class="h-2 w-2 rounded-full bg-brand-dark"></span>
@@ -12,7 +12,7 @@
       </span>
 
       <!-- Título con resaltado -->
-      <h1 class="text-[3rem] leading-[1.05] font-extrabold tracking-tight text-brand-ink
+      <h1 class="home-enter-item text-[3rem] leading-[1.05] font-extrabold tracking-tight text-brand-ink
                  sm:text-[3.5rem] lg:text-[4.25rem]">
         @for (part of content.title; track $index) {
           <span [class.text-brand-dark]="part.highlight">{{ part.text }}</span>
@@ -20,12 +20,12 @@
       </h1>
 
       <!-- Descripción -->
-      <p class="max-w-xl text-base leading-relaxed text-brand-ink/75 sm:text-lg">
+      <p class="home-enter-item max-w-xl text-base leading-relaxed text-brand-ink/75 sm:text-lg">
         {{ content.description }}
       </p>
 
       <!-- Botones de acción -->
-      <div class="flex flex-wrap gap-4">
+      <div class="home-enter-item flex flex-wrap gap-4">
         @for (cta of content.ctas; track cta.label) {
           <a [href]="cta.href"
              [class]="cta.variant === 'primary'
@@ -47,7 +47,7 @@
     <!-- Columna derecha: tarjetas destacadas -->
     <div class="flex flex-col gap-4 lg:pt-12">
       @for (card of content.highlights; track card.title) {
-        <article class="flex items-center gap-4 rounded-2xl border border-brand-dark/15
+        <article class="home-enter-item flex items-center gap-4 rounded-2xl border border-brand-dark/15
                         bg-white px-5 py-4 shadow-[0_10px_30px_-20px_rgba(46,125,50,0.35)]
                         transition hover:border-brand-dark/40">
           <span class="grid h-11 w-11 shrink-0 place-items-center rounded-full
@@ -92,7 +92,7 @@
   </div>
 
   <!-- Franja inferior de estadísticas -->
-  <div class="border-t border-brand-dark/15 bg-white/60">
+  <div class="home-enter-item border-t border-brand-dark/15 bg-white/60">
     <div class="mx-auto grid max-w-6xl grid-cols-2 gap-6 px-6 py-6 sm:grid-cols-4">
       @for (stat of content.stats; track stat.value) {
         <div class="flex flex-col">
