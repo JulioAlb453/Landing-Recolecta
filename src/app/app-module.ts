@@ -5,11 +5,13 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { HeaderComponent } from './layout/header/header.component';
+import { FooterComponent } from './layout/footer/footer.component';
 
 @NgModule({
   declarations: [
     App,
     HeaderComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -18,7 +20,6 @@ import { HeaderComponent } from './layout/header/header.component';
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideClientHydration(withEventReplay()),
-    /** En el navegador carga el motor de animaciones; en SSR (ngServerMode) usa noop automáticamente */
     provideAnimationsAsync(),
   ],
   bootstrap: [App],

@@ -7,10 +7,6 @@ import {
   trigger,
 } from '@angular/animations';
 
-/**
- * Entrada de la página Home: elementos con clase `home-enter-item`
- * aparecen en secuencia con difuminado (blur) y ligero desplazamiento vertical.
- */
 export const homeEnterAnimation = trigger('homeEnter', [
   transition(':enter', [
     query(
@@ -37,9 +33,6 @@ export const homeEnterAnimation = trigger('homeEnter', [
   ]),
 ]);
 
-/**
- * Encabezado: entrada única con blur y deslizamiento desde arriba.
- */
 export const headerEnterAnimation = trigger('headerEnter', [
   transition(':enter', [
     style({
@@ -54,6 +47,32 @@ export const headerEnterAnimation = trigger('headerEnter', [
         filter: 'blur(0)',
         transform: 'translateY(0)',
       }),
+    ),
+  ]),
+]);
+
+export const aboutEnterAnimation = trigger('aboutEnter', [
+  transition(':enter', [
+    query(
+      '.about-enter-item',
+      [
+        style({
+          opacity: 0,
+          filter: 'blur(10px)',
+          transform: 'translateY(20px)',
+        }),
+        stagger(100, [
+          animate(
+            '500ms cubic-bezier(0.22, 1, 0.36, 1)',
+            style({
+              opacity: 1,
+              filter: 'blur(0)',
+              transform: 'translateY(0)',
+            }),
+          ),
+        ]),
+      ],
+      { optional: true },
     ),
   ]),
 ]);

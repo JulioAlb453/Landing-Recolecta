@@ -1,10 +1,7 @@
-<!-- Encabezado: logotipo, navegación y menú móvil -->
 <header [@headerEnter] class="w-full border-b-2 border-brand-dark/30 bg-brand-accent-soft">
   <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
-    <!-- Logotipo -->
-    <a href="/" class="flex items-center gap-2 text-brand-ink">
+    <a routerLink="/" class="flex items-center gap-2 text-brand-ink">
       <span class="grid h-8 w-8 place-items-center rounded-full bg-brand-dark text-brand-cream">
-        <!-- Ícono hoja -->
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
           <path d="M11 20A7 7 0 0 1 4 13V6h7a7 7 0 0 1 7 7 7 7 0 0 1-7 7Z"/>
@@ -16,17 +13,19 @@
       </span>
     </a>
 
-    <!-- Navegación desktop -->
     <nav class="hidden items-center gap-8 md:flex">
-      @for (link of navLinks; track link.fragment) {
-        <a [href]="'#' + link.fragment"
-           class="text-sm font-medium text-brand-ink/80 transition hover:text-brand-dark">
+      @for (link of navLinks; track link.label) {
+        <a
+          [routerLink]="link.routerLink"
+          [fragment]="link.fragment"
+          routerLinkActive="text-brand-dark font-semibold"
+          [routerLinkActiveOptions]="{ exact: link.exact === true }"
+          class="text-sm font-medium text-brand-ink/80 transition hover:text-brand-dark">
           {{ link.label }}
         </a>
       }
     </nav>
 
-    <!-- Menú móvil -->
     <button type="button"
             (click)="toggleMenu()"
             class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-brand-dark/30
@@ -39,12 +38,14 @@
     </button>
   </div>
 
-  <!-- Menú mobile desplegable -->
   @if (menuOpen()) {
     <div class="border-t border-brand-dark/15 md:hidden">
       <nav class="mx-auto flex max-w-6xl flex-col gap-2 px-6 py-4">
-        @for (link of navLinks; track link.fragment) {
-          <a [href]="'#' + link.fragment"
+        @for (link of navLinks; track link.label) {
+          <a [routerLink]="link.routerLink"
+             [fragment]="link.fragment"
+             routerLinkActive="bg-brand-dark/10 text-brand-dark font-semibold"
+             [routerLinkActiveOptions]="{ exact: link.exact === true }"
              (click)="toggleMenu()"
              class="rounded-lg px-3 py-2 text-sm font-medium text-brand-ink/80 hover:bg-brand-dark/10">
             {{ link.label }}

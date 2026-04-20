@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { HomeComponent } from './home.component';
+import { AboutComponent } from './about.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
-    data: { animation: 'home' },
-    title: 'Inicio · Juntos por un Chiapas Limpio',
+    component: AboutComponent,
+    data: { animation: 'about' },
+    title: 'Quiénes somos · Juntos por un Chiapas Limpio',
   },
 ];
 
@@ -16,4 +16,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class HomeRoutingModule {}
+export class AboutRoutingModule {}

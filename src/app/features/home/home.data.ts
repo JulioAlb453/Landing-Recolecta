@@ -74,6 +74,5 @@ export const HOME_CONTENT: HomeContent = {
     { value: '2026', label: 'Año de desarrollo' },
     { value: 'IT2iD', label: 'Carrera desarrolladora' },
     { value: 'Chiapas', label: 'Cobertura estatal' },
-    { value: '100%', label: '', accent: true },
   ],
 };

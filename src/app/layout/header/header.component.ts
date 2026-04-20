@@ -4,7 +4,9 @@ import { headerEnterAnimation } from '../../shared/animations/page-enter.animati
 
 interface NavLink {
   readonly label: string;
-  readonly fragment: string;
+  readonly routerLink: string;
+  readonly fragment?: string;
+  readonly exact?: boolean;
 }
 
 @Component({
@@ -16,10 +18,10 @@ interface NavLink {
 })
 export class HeaderComponent {
   protected readonly navLinks: ReadonlyArray<NavLink> = [
-    { label: 'Proyecto', fragment: 'proyecto' },
-    { label: 'IT2iD', fragment: 'it2id' },
-    { label: 'Misión', fragment: 'mision' },
-    { label: 'Municipios', fragment: 'municipios' },
+    { label: 'Proyecto', routerLink: '/', exact: true },
+    { label: 'Quiénes somos', routerLink: '/quienes-somos' },
+    { label: 'Misión', routerLink: '/', fragment: 'mision' },
+    { label: 'Municipios', routerLink: '/', fragment: 'municipios' },
   ];
 
   protected readonly menuOpen = signal(false);

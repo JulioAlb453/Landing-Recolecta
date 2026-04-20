@@ -7,6 +7,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./features/home/home.module').then((m) => m.HomeModule),
   },
+  {
+    path: 'quienes-somos',
+    loadChildren: () =>
+      import('./features/about/about.module').then((m) => m.AboutModule),
+  },
   { path: '**', redirectTo: '' },
 ];
 
