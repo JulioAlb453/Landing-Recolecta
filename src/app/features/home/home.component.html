@@ -19,23 +19,25 @@
         {{ content.description }}
       </p>
 
-      <div class="home-enter-item flex flex-wrap gap-4">
-        @for (cta of content.ctas; track cta.label) {
-          <a [href]="cta.href"
-             [class]="cta.variant === 'primary'
-               ? 'inline-flex items-center gap-2 rounded-full bg-brand-dark px-6 py-3 text-sm font-semibold text-brand-cream shadow-sm transition hover:bg-brand-darker'
-               : 'inline-flex items-center gap-2 rounded-full border border-brand-dark px-6 py-3 text-sm font-semibold text-brand-dark transition hover:bg-brand-dark/5'">
-            <span>{{ cta.label }}</span>
-            @if (cta.external) {
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                   stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                   stroke-linejoin="round" class="h-4 w-4">
-                <path d="M7 17 17 7"/><path d="M8 7h9v9"/>
-              </svg>
-            }
-          </a>
-        }
-      </div>
+      @if (content.ctas.length) {
+        <div class="home-enter-item flex flex-wrap gap-4">
+          @for (cta of content.ctas; track cta.label) {
+            <a [href]="cta.href"
+               [class]="cta.variant === 'primary'
+                 ? 'inline-flex items-center gap-2 rounded-full bg-brand-dark px-6 py-3 text-sm font-semibold text-brand-cream shadow-sm transition hover:bg-brand-darker'
+                 : 'inline-flex items-center gap-2 rounded-full border border-brand-dark px-6 py-3 text-sm font-semibold text-brand-dark transition hover:bg-brand-dark/5'">
+              <span>{{ cta.label }}</span>
+              @if (cta.external) {
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                     stroke-linejoin="round" class="h-4 w-4">
+                  <path d="M7 17 17 7"/><path d="M8 7h9v9"/>
+                </svg>
+              }
+            </a>
+          }
+        </div>
+      }
     </div>
 
     <div class="flex flex-col gap-4 lg:pt-12">
@@ -84,9 +86,9 @@
   </div>
 
   <div class="home-enter-item border-t border-brand-dark/15 bg-white/60">
-    <div class="mx-auto grid max-w-6xl grid-cols-2 gap-6 px-6 py-6 sm:grid-cols-4">
+    <div class="mx-auto flex max-w-6xl flex-wrap justify-center gap-x-10 gap-y-5 px-6 py-6 sm:gap-x-14">
       @for (stat of content.stats; track stat.value) {
-        <div class="flex flex-col">
+        <div class="flex min-w-[9rem] flex-col items-center text-center sm:min-w-[10rem]">
           <span [class]="stat.accent
                   ? 'text-2xl font-extrabold text-brand-dark sm:text-3xl'
                   : 'text-2xl font-extrabold text-brand-ink sm:text-3xl'">

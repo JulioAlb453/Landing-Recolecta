@@ -1,0 +1,51 @@
+<section [@missionVisionEnter] class="bg-brand-panel py-16 md:py-24">
+  <div class="mx-auto max-w-6xl px-6">
+    <header class="mv-enter-item mb-12 md:mb-16">
+      <div class="mb-3 flex items-center gap-3">
+        <span class="h-1 w-10 rounded-full bg-brand-soft" aria-hidden="true"></span>
+        <span class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-cream/75">
+          {{ content.kicker }}
+        </span>
+      </div>
+      <h1 class="text-3xl font-extrabold tracking-tight text-brand-cream md:text-4xl lg:text-5xl">
+        {{ content.title }}
+      </h1>
+    </header>
+
+    <div class="grid gap-8 md:grid-cols-2 md:gap-10">
+      <article
+        class="mv-enter-item flex flex-col rounded-2xl border border-black/10 bg-white p-6 shadow-md md:p-8">
+        <span
+          class="mb-5 inline-flex w-fit rounded-full bg-brand-dark/12 px-3.5 py-1.5 text-[0.65rem] font-bold uppercase tracking-wider text-brand-darker">
+          {{ content.mission.pill }}
+        </span>
+        <p class="text-sm leading-relaxed text-brand-ink md:text-base">
+          @for (seg of content.mission.segments; track $index) {
+            @if (seg.emphasis) {
+              <strong class="font-semibold text-brand-ink">{{ seg.text }}</strong>
+            } @else {
+              <span>{{ seg.text }}</span>
+            }
+          }
+        </p>
+      </article>
+
+      <article
+        class="mv-enter-item flex flex-col rounded-2xl border border-black/10 bg-white p-6 shadow-md md:p-8">
+        <span
+          class="mb-5 inline-flex w-fit rounded-full bg-brand-dark/12 px-3.5 py-1.5 text-[0.65rem] font-bold uppercase tracking-wider text-brand-darker">
+          {{ content.vision.pill }}
+        </span>
+        <p class="text-sm leading-relaxed text-brand-ink md:text-base">
+          @for (seg of content.vision.segments; track $index) {
+            @if (seg.emphasis) {
+              <strong class="font-semibold text-brand-ink">{{ seg.text }}</strong>
+            } @else {
+              <span>{{ seg.text }}</span>
+            }
+          }
+        </p>
+      </article>
+    </div>
+  </div>
+</section>

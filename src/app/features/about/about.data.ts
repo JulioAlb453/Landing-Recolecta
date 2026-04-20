@@ -16,10 +16,10 @@ export const ABOUT_CONTENT: AboutContent = {
   title: 'IT2iD',
   badge: 'Desarrollo en TI e Innovación Digital',
   description:
-    'Somos estudiantes y docentes de IT2iD trabajando de la mano con la Secretaría de Medio Ambiente de Chiapas para construir soluciones digitales reales.',
+    'Somos estudiantes y docentes de IT2iD (Desarrollo en Tecnologías de la Información e Innovación Digital) impulsando soluciones digitales con impacto real en la gestión de residuos y en la comunidad.',
   bullets: [
-    'Gobierno del Estado de Chiapas',
-    'Secretaría de Medio Ambiente e Historia Natural',
+    'Universidad Politécnica de Chiapas',
     'Carrera IT2iD · talento local',
+    'Proyecto académico con enfoque social',
   ],
 };
