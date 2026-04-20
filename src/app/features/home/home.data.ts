@@ -44,13 +44,10 @@ export const HOME_CONTENT: HomeContent = {
   ],
 
   description:
-    'El Gobierno de Chiapas y estudiantes de IT2iD construyen una plataforma ' +
-    'para optimizar la recolección de residuos en todo el estado.',
+    'Desde IT2iD desarrollamos una plataforma para optimizar la recolección de ' +
+    'residuos en todo el estado.',
 
-  ctas: [
-    { label: 'Conoce la plataforma', variant: 'primary', href: '#proyecto', external: true },
-    { label: 'Cómo participar', variant: 'secondary', href: '#participar' },
-  ],
+  ctas: [],
 
   highlights: [
     {
@@ -65,8 +62,8 @@ export const HOME_CONTENT: HomeContent = {
     },
     {
       icon: 'users',
-      title: 'Gobierno + IT2iD',
-      subtitle: 'Colaboración activa',
+      title: 'Equipo IT2iD',
+      subtitle: 'Colaboración entre estudiantes',
     },
   ],
 

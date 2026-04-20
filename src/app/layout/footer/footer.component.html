@@ -1,6 +1,6 @@
 <footer class="mt-auto w-full">
   <section class="bg-brand-deepest px-6 py-12 text-brand-cream md:py-14">
-    <div class="mx-auto grid max-w-6xl gap-10 md:grid-cols-2 md:gap-16 lg:gap-24">
+    <div class="mx-auto grid max-w-6xl gap-10 md:grid-cols-2 lg:grid-cols-3 lg:gap-12">
       <div class="flex flex-col gap-4">
         <p class="text-2xl font-bold tracking-tight md:text-3xl">
           <span class="text-brand-cream">{{ content.brand.nameBeforeAccent }}</span><span
@@ -22,6 +22,30 @@
                 class="border-b border-transparent transition hover:border-brand-border hover:text-brand-cream">
                 {{ item }}
               </span>
+            </li>
+          }
+        </ul>
+      </div>
+
+      <div class="flex flex-col gap-4 md:col-span-2 md:items-start lg:col-span-1">
+        <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-brand-soft">
+          {{ content.contactsTitle }}
+        </h3>
+        <ul class="flex w-full flex-col gap-4 text-sm">
+          @for (contact of content.contacts; track contact.label) {
+            <li class="flex flex-col gap-0.5">
+              <span class="text-[0.7rem] font-semibold uppercase tracking-wide text-brand-cream/55">
+                {{ contact.label }}
+              </span>
+              @if (contact.href) {
+                <a
+                  [href]="contact.href"
+                  class="text-brand-cream/90 transition hover:text-brand-soft hover:underline">
+                  {{ contact.value }}
+                </a>
+              } @else {
+                <span class="text-brand-cream/90">{{ contact.value }}</span>
+              }
             </li>
           }
         </ul>

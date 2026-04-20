@@ -12,6 +12,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./features/about/about.module').then((m) => m.AboutModule),
   },
+  // {
+  //   path: 'mision-y-vision',
+  //   loadChildren: () =>
+  //     import('./features/mission-vision/mission-vision.module').then(
+  //       (m) => m.MissionVisionModule,
+  //     ),
+  // },
   { path: '**', redirectTo: '' },
 ];
 
