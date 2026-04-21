@@ -4,6 +4,11 @@ export interface ContactItem {
   readonly href?: string;
 }
 
+export interface SocialLink {
+  readonly label: string;
+  readonly href: string;
+}
+
 export interface FooterContent {
   readonly brand: {
     readonly nameBeforeAccent: string;
@@ -14,9 +19,10 @@ export interface FooterContent {
   readonly institutions: readonly string[];
   readonly contactsTitle: string;
   readonly contacts: readonly ContactItem[];
+  readonly socialsTitle: string;
+  readonly socials: readonly SocialLink[];
   readonly bottom: {
     readonly credits: string;
-    readonly phoneLabel: string;
   };
 }
 
@@ -40,17 +46,22 @@ export const FOOTER_CONTENT: FooterContent = {
       href: 'mailto:recolectait2id@gmail.com',
     },
     {
-      label: 'Teléfono',
-      value: '800-123-CHIAPAS',
-      href: 'tel:80012342427',
-    },
-    {
       label: 'Ubicación',
       value: 'Tuxtla Gutiérrez, Chiapas',
     },
   ],
+  socialsTitle: 'REDES SOCIALES',
+  socials: [
+    {
+      label: 'Facebook',
+      href: 'https://www.facebook.com/share/17YHmKbgrm/',
+    },
+    {
+      label: 'Instagram',
+      href: 'https://www.instagram.com/recolecta43?igsh=MWIwcGIzMTA4bzV3bQ==',
+    },
+  ],
   bottom: {
     credits: 'Hecho por estudiantes de IT2iD · Versión demo 2026',
-    phoneLabel: '800-123-CHIAPAS',
   },
 };
