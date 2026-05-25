@@ -12,6 +12,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./features/about/about.module').then((m) => m.AboutModule),
   },
+  {
+    path: 'funcionalidades',
+    loadChildren: () =>
+      import('./features/capabilities/capabilities.module').then(
+        (m) => m.CapabilitiesModule,
+      ),
+  },
   // {
   //   path: 'mision-y-vision',
   //   loadChildren: () =>

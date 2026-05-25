@@ -20,6 +20,7 @@ export class HeaderComponent {
   protected readonly navLinks: ReadonlyArray<NavLink> = [
     { label: 'Proyecto', routerLink: '/', exact: true },
     { label: 'Quiénes somos', routerLink: '/quienes-somos' },
+    { label: 'Funcionalidades', routerLink: '/funcionalidades' },
     // { label: 'Misión y Visión', routerLink: '/mision-y-vision' },
   ];
 

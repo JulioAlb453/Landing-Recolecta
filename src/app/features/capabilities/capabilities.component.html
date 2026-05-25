@@ -1,0 +1,144 @@
+<section [@capabilitiesEnter] class="bg-brand-cream py-16 md:py-24">
+  <div class="mx-auto max-w-6xl px-6">
+
+    <!-- Encabezado de sección -->
+    <header class="cap-enter-item mb-14 text-center md:mb-16">
+      <p class="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-brand-dark">
+        — {{ content.kicker }}
+      </p>
+      <h1 class="text-4xl font-extrabold tracking-tight text-brand-ink md:text-5xl">
+        {{ content.title }}
+      </h1>
+      <p class="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-brand-ink-soft md:text-lg">
+        {{ content.subtitle }}
+      </p>
+    </header>
+
+    <!-- Grid de funcionalidades -->
+    <div class="grid gap-8 md:grid-cols-3">
+      @for (cap of content.capabilities; track cap.title) {
+        <article
+          class="cap-enter-item group flex flex-col overflow-hidden rounded-2xl border border-brand-dark/15
+                 bg-white shadow-[0_8px_30px_-12px_rgba(46,125,50,0.22)]
+                 transition duration-300 hover:-translate-y-1
+                 hover:shadow-[0_16px_40px_-12px_rgba(46,125,50,0.32)]">
+
+          <!-- Banda superior de color -->
+          @switch (cap.icon) {
+            @case ('route') {
+              <div class="h-1.5 w-full bg-gradient-to-r from-brand-dark via-brand-soft to-brand-border"></div>
+            }
+            @case ('map') {
+              <div class="h-1.5 w-full bg-gradient-to-r from-brand-accent-light via-brand-soft to-brand-dark"></div>
+            }
+            @case ('nlp') {
+              <div class="h-1.5 w-full bg-gradient-to-r from-brand-accent via-brand-accent-light to-brand-soft"></div>
+            }
+          }
+
+          <!-- Cabecera de tarjeta: icono + pill -->
+          <div class="flex items-center gap-4 px-7 pt-6 pb-2">
+            @switch (cap.icon) {
+              @case ('route') {
+                <span
+                  class="grid h-12 w-12 shrink-0 place-items-center rounded-xl
+                         bg-brand-dark/10 ring-1 ring-brand-dark/20 text-brand-dark">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                       stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                       stroke-linejoin="round" class="h-6 w-6">
+                    <circle cx="6" cy="19" r="3"/>
+                    <circle cx="18" cy="5" r="3"/>
+                    <path d="M12 19h4.5a3.5 3.5 0 0 0 0-7h-8a3.5 3.5 0 0 1 0-7H12"/>
+                  </svg>
+                </span>
+                <span
+                  class="inline-flex rounded-full bg-brand-dark/10 px-3.5 py-1.5
+                         text-[0.65rem] font-bold uppercase tracking-wider text-brand-darker">
+                  {{ cap.pill }}
+                </span>
+              }
+              @case ('map') {
+                <span
+                  class="grid h-12 w-12 shrink-0 place-items-center rounded-xl
+                         bg-brand-accent-light/15 ring-1 ring-brand-accent-light/30 text-brand-accent-light">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                       stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                       stroke-linejoin="round" class="h-6 w-6">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                  </svg>
+                </span>
+                <span
+                  class="inline-flex rounded-full bg-brand-accent-light/15 px-3.5 py-1.5
+                         text-[0.65rem] font-bold uppercase tracking-wider text-brand-accent-light">
+                  {{ cap.pill }}
+                </span>
+              }
+              @case ('nlp') {
+                <span
+                  class="grid h-12 w-12 shrink-0 place-items-center rounded-xl
+                         bg-brand-accent/15 ring-1 ring-brand-accent/30 text-brand-accent">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                       stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                       stroke-linejoin="round" class="h-6 w-6">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                    <path d="M8 10h8"/>
+                    <path d="M8 14h5"/>
+                  </svg>
+                </span>
+                <span
+                  class="inline-flex rounded-full bg-brand-accent/15 px-3.5 py-1.5
+                         text-[0.65rem] font-bold uppercase tracking-wider text-brand-accent">
+                  {{ cap.pill }}
+                </span>
+              }
+            }
+          </div>
+
+          <!-- Cuerpo de tarjeta -->
+          <div class="flex flex-1 flex-col px-7 pb-8 pt-4">
+            <h2 class="mb-3 text-lg font-bold leading-snug text-brand-ink">
+              {{ cap.title }}
+            </h2>
+            <p class="mb-6 text-sm leading-relaxed text-brand-ink-soft">
+              {{ cap.description }}
+            </p>
+
+            <!-- Lista de características -->
+            <ul class="mt-auto flex flex-col gap-3">
+              @for (item of cap.items; track item.text) {
+                <li class="flex items-start gap-3 text-sm text-brand-ink-soft">
+                  @switch (cap.icon) {
+                    @case ('route') {
+                      <span
+                        class="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-brand-dark"
+                        aria-hidden="true"></span>
+                    }
+                    @case ('map') {
+                      <span
+                        class="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-brand-accent-light"
+                        aria-hidden="true"></span>
+                    }
+                    @case ('nlp') {
+                      <span
+                        class="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-brand-accent"
+                        aria-hidden="true"></span>
+                    }
+                  }
+                  <span>{{ item.text }}</span>
+                </li>
+              }
+            </ul>
+          </div>
+
+        </article>
+      }
+    </div>
+
+    <!-- Nota al pie de la sección -->
+    <p class="cap-enter-item mt-12 text-center text-xs text-brand-ink-soft/60">
+      Todas las funcionalidades forman parte de la plataforma Recolecta en desarrollo activo · IT2iD · 2026
+    </p>
+
+  </div>
+</section>
