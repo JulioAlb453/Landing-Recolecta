@@ -1,0 +1,79 @@
+<section [@projectEnter] class="bg-brand-cream pb-20 pt-20 md:pb-28 md:pt-28">
+  <div class="mx-auto max-w-6xl px-6">
+
+    <!-- Marca orgánica superior -->
+    <header class="project-enter-item mb-12 flex flex-col items-center gap-4 text-center">
+      <div class="flex items-center gap-3" aria-hidden="true">
+        <span class="h-px w-12 bg-brand-dark/30"></span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+             fill="currentColor" class="h-4 w-4 text-brand-dark/50">
+          <path d="M17 8C8 10 5.9 16.17 3.82 22h1.9C7 19 11 14 21 12c0 0-2-9-12-10
+                   0 0 7 0 8 6Z"/>
+        </svg>
+        <span class="h-px w-12 bg-brand-dark/30"></span>
+      </div>
+      <span class="text-[0.65rem] font-semibold uppercase tracking-[0.28em] text-brand-dark">
+        {{ content.kicker }}
+      </span>
+    </header>
+
+    <!-- Bloque principal: marca + texto -->
+    <div
+      class="grid gap-14 md:grid-cols-[minmax(0,360px)_minmax(0,1fr)]
+             md:items-center md:gap-20 lg:gap-24">
+
+      <!-- Marca simplificada -->
+      <div
+        class="project-enter-item relative overflow-hidden rounded-3xl border border-brand-soft/20 bg-white px-6 py-8 text-center shadow-[0_20px_45px_-30px_rgba(14,31,8,0.22)]">
+        <span
+          class="absolute -right-16 -top-16 h-36 w-36 rounded-full bg-brand-soft/15"
+          aria-hidden="true"></span>
+
+        <div
+          class="relative mx-auto flex h-[360px] max-h-[58vh] w-full max-w-[230px] items-center justify-center
+                 overflow-hidden rounded-[2rem] bg-brand-soft/10 p-3 ring-1 ring-brand-soft/25 sm:h-[420px]">
+          <img
+            src="/img-recolecta.webp"
+            [alt]="content.imageAlt"
+            class="h-full w-full object-contain" />
+        </div>
+
+        <p class="relative mt-7 text-3xl font-extrabold tracking-tight text-brand-ink">
+          Recolecta
+        </p>
+        <p class="relative mx-auto mt-3 max-w-xs text-sm leading-relaxed text-brand-ink-soft">
+          Plataforma digital para rutas, unidades y comunicación ciudadana.
+        </p>
+      </div>
+
+      <!-- Texto (derecha) -->
+      <div class="flex flex-col gap-6 md:pl-4">
+        <h1
+          class="project-enter-item text-3xl font-bold leading-snug tracking-tight
+                 text-brand-ink md:text-4xl">
+          {{ content.title }}
+        </h1>
+
+        <p
+          class="project-enter-item text-base leading-relaxed text-brand-ink
+                 md:text-[1.05rem]">
+          {{ content.description }}
+        </p>
+
+        <a
+          [routerLink]="content.cta.routerLink"
+          class="project-enter-item inline-flex w-fit items-center gap-2 rounded-full bg-brand-card px-6 py-3
+                 text-sm font-semibold text-brand-cream shadow-sm transition hover:bg-brand-dark">
+          {{ content.cta.label }}
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round"
+               class="h-4 w-4">
+            <path d="M5 12h14"/>
+            <path d="m12 5 7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

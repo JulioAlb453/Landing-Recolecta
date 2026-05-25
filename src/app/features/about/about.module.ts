@@ -3,9 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { AboutRoutingModule } from './about-routing.module';
 import { AboutComponent } from './about.component';
+import { SharedModule } from '../../shared';
 
 @NgModule({
   declarations: [AboutComponent],
-  imports: [CommonModule, AboutRoutingModule],
+  imports: [CommonModule, AboutRoutingModule, SharedModule],
 })
 export class AboutModule {}

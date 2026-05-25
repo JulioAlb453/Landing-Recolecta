@@ -1,15 +1,29 @@
-<section [@aboutEnter] class="bg-brand-cream py-14 md:py-20">
+<section [@aboutEnter] class="relative overflow-hidden bg-brand-cream pb-0 pt-14 md:pt-20">
+  <span
+    class="wave-blob wave-blob--soft pointer-events-none absolute -left-20 top-16 h-64 w-64 rounded-full
+           bg-brand-soft/20 blur-3xl"
+    aria-hidden="true"></span>
+  <span
+    class="wave-blob wave-blob--accent pointer-events-none absolute right-8 top-10 h-28 w-28 rotate-12
+           rounded-[2rem] bg-brand-accent-light/25 blur-sm"
+    aria-hidden="true"></span>
+
   <div
-    class="mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] md:gap-12 md:items-start">
+    class="relative mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] md:gap-12 md:items-start">
     <blockquote
-    class="about-enter-item relative mx-auto flex w-full max-w-lg min-h-[280px] flex-col justify-between rounded-3xl bg-brand-panel px-6 py-9 shadow-lg sm:px-7 md:min-h-[320px]">      <span aria-hidden="true" class="font-serif text-5xl leading-none text-white/40">“</span>
+      class="about-enter-item relative mx-auto flex min-h-[280px] w-full max-w-lg flex-col justify-between overflow-hidden
+             rounded-3xl bg-brand-panel px-6 py-9 shadow-lg sm:px-7 md:min-h-[320px]">
+      <span
+        class="absolute -bottom-20 -right-14 h-44 w-44 rounded-full bg-brand-soft/20 blur-2xl"
+        aria-hidden="true"></span>
+      <span aria-hidden="true" class="relative font-serif text-5xl leading-none text-white/40">“</span>
       <div class="flex flex-1 flex-col">
-        <p class="pt-2 text-lg italic leading-relaxed text-white md:text-xl">
+        <p class="relative pt-2 text-lg italic leading-relaxed text-white md:text-xl">
           {{ content.quote }}
         </p>
-        <span aria-hidden="true" class="mt-1 self-end font-serif text-5xl leading-none text-white/40">”</span>
+        <span aria-hidden="true" class="relative mt-1 self-end font-serif text-5xl leading-none text-white/40">”</span>
       </div>
-      <footer class="pt-6 text-sm text-brand-cream/75">
+      <footer class="relative pt-6 text-sm text-brand-cream/75">
         {{ content.quoteAttribution }}
       </footer>
     </blockquote>
@@ -46,3 +60,35 @@
     </div>
   </div>
 </section>
+
+<app-wave-divider variant="layered" fill="var(--color-brand-panel)" />
+
+<section class="relative overflow-hidden bg-brand-panel px-6 py-14 md:py-16">
+  <span
+    class="wave-blob wave-blob--soft pointer-events-none absolute -right-20 top-0 h-56 w-56 rounded-full
+           bg-brand-soft/20 blur-3xl"
+    aria-hidden="true"></span>
+
+  <div class="about-enter-item relative mx-auto max-w-3xl text-center">
+    <p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand-soft">
+      Compromiso IT2iD
+    </p>
+    <p class="mt-4 text-lg leading-relaxed text-brand-cream/85 md:text-xl">
+      Desarrollamos Recolecta con enfoque en impacto social, sostenibilidad y talento chiapaneco.
+    </p>
+    <a
+      routerLink="/la-aplicacion"
+      appWaveEffect
+      class="waves-effect mt-7 inline-flex items-center gap-2 rounded-full bg-brand-soft px-6 py-3 text-sm font-semibold
+             text-brand-deepest shadow-lg transition hover:bg-brand-border">
+      Conoce el proyecto
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2" stroke-linecap="round"
+           stroke-linejoin="round" class="h-4 w-4">
+        <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+      </svg>
+    </a>
+  </div>
+</section>
+
+<app-wave-divider variant="asymmetric" fill="var(--color-brand-panel)" [flip]="true" />

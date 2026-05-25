@@ -43,6 +43,9 @@
             "styles": [
               "src/styles.css"
             ],
+            "allowedCommonJsDependencies": [
+              "node-waves"
+            ],
             "server": "src/main.server.ts",
             "outputMode": "server",
             "security": {

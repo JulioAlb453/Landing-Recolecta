@@ -23,9 +23,10 @@
         <div class="home-enter-item flex flex-wrap gap-4">
           @for (cta of content.ctas; track cta.label) {
             <a [href]="cta.href"
+               appWaveEffect
                [class]="cta.variant === 'primary'
-                 ? 'inline-flex items-center gap-2 rounded-full bg-brand-dark px-6 py-3 text-sm font-semibold text-brand-cream shadow-sm transition hover:bg-brand-darker'
-                 : 'inline-flex items-center gap-2 rounded-full border border-brand-dark px-6 py-3 text-sm font-semibold text-brand-dark transition hover:bg-brand-dark/5'">
+                 ? 'waves-effect inline-flex items-center gap-2 rounded-full bg-brand-dark px-6 py-3 text-sm font-semibold text-brand-cream shadow-sm transition hover:bg-brand-darker'
+                 : 'waves-effect inline-flex items-center gap-2 rounded-full border border-brand-dark px-6 py-3 text-sm font-semibold text-brand-dark transition hover:bg-brand-dark/5'">
               <span>{{ cta.label }}</span>
               @if (cta.external) {
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
@@ -76,29 +77,51 @@
             }
           </span>
 
-          <div class="flex flex-col">
-            <h3 class="text-sm font-semibold text-brand-ink">{{ card.title }}</h3>
-            <p class="text-xs text-brand-ink-soft">{{ card.subtitle }}</p>
+          <div class="flex flex-1 flex-col gap-2">
+            <div class="flex flex-col">
+              <h3 class="text-sm font-semibold text-brand-ink">{{ card.title }}</h3>
+              <p class="text-xs text-brand-ink-soft">{{ card.subtitle }}</p>
+            </div>
+            <div class="flex items-end justify-between gap-3 border-t border-brand-dark/10 pt-2">
+              <span class="text-[0.65rem] font-medium uppercase tracking-[0.12em] text-brand-ink-soft">
+                {{ card.metricLabel }}
+              </span>
+              <strong class="text-lg font-extrabold leading-none text-brand-dark">
+                {{ card.metric }}
+              </strong>
+            </div>
           </div>
         </article>
       }
     </div>
   </div>
-
-  <div class="home-enter-item border-t border-brand-dark/15 bg-white/60">
-    <div class="mx-auto flex max-w-6xl flex-wrap justify-center gap-x-10 gap-y-5 px-6 py-6 sm:gap-x-14">
-      @for (stat of content.stats; track stat.value) {
-        <div class="flex min-w-[9rem] flex-col items-center text-center sm:min-w-[10rem]">
-          <span [class]="stat.accent
-                  ? 'text-2xl font-extrabold text-brand-dark sm:text-3xl'
-                  : 'text-2xl font-extrabold text-brand-ink sm:text-3xl'">
-            {{ stat.value }}
-          </span>
-          @if (stat.label) {
-            <span class="text-xs text-brand-ink-soft">{{ stat.label }}</span>
-          }
-        </div>
-      }
-    </div>
-  </div>
 </section>
+
+<div class="wave-section-dark relative overflow-hidden bg-brand-cream">
+  <app-wave-divider class="-mb-px" variant="asymmetric" fill="var(--color-brand-panel)" />
+
+  <section class="relative overflow-hidden bg-brand-panel px-6 py-16 md:py-20">
+    <div class="home-enter-item relative mx-auto max-w-3xl text-center">
+      <h2 class="text-3xl font-extrabold leading-tight tracking-tight text-brand-cream md:text-4xl lg:text-[2.75rem]">
+        {{ content.banner.title }}<span class="text-brand-soft">{{ content.banner.highlight }}</span>
+      </h2>
+      <p class="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-brand-cream/80 md:text-lg">
+        {{ content.banner.description }}
+      </p>
+      <a
+        routerLink="/la-aplicacion"
+        appWaveEffect
+        class="waves-effect mt-8 inline-flex items-center gap-2 rounded-full bg-brand-soft px-7 py-3.5 text-sm font-semibold
+               text-brand-deepest shadow-lg transition hover:bg-brand-border">
+        {{ content.banner.ctaLabel }}
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round" class="h-4 w-4">
+          <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <app-wave-divider class="-mt-px" variant="gentle" fill="var(--color-brand-panel)" [flip]="true" />
+</div>

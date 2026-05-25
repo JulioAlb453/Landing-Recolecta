@@ -17,12 +17,16 @@ export interface HighlightCard {
   readonly icon: IconName;
   readonly title: string;
   readonly subtitle: string;
+  readonly metric: string;
+  readonly metricLabel: string;
 }
 
-export interface StatItem {
-  readonly value: string;
-  readonly label: string;
-  readonly accent?: boolean;
+export interface BannerContent {
+  readonly title: string;
+  readonly highlight: string;
+  readonly description: string;
+  readonly ctaLabel: string;
+  readonly ctaHref: string;
 }
 
 export interface HomeContent {
@@ -31,7 +35,7 @@ export interface HomeContent {
   readonly description: string;
   readonly ctas: ReadonlyArray<CtaButton>;
   readonly highlights: ReadonlyArray<HighlightCard>;
-  readonly stats: ReadonlyArray<StatItem>;
+  readonly banner: BannerContent;
 }
 
 export const HOME_CONTENT: HomeContent = {
@@ -54,22 +58,31 @@ export const HOME_CONTENT: HomeContent = {
       icon: 'shield',
       title: 'Fase de desarrollo',
       subtitle: 'Piloto en zonas clave',
+      metric: '2026',
+      metricLabel: 'Año de desarrollo',
     },
     {
       icon: 'clock',
       title: 'App y web en construcción',
       subtitle: 'IT2iD · talento local',
+      metric: 'IT2iD',
+      metricLabel: 'Carrera desarrolladora',
     },
     {
       icon: 'users',
       title: 'Equipo IT2iD',
       subtitle: 'Colaboración entre estudiantes',
+      metric: 'Chiapas',
+      metricLabel: 'Cobertura estatal',
     },
   ],
 
-  stats: [
-    { value: '2026', label: 'Año de desarrollo' },
-    { value: 'IT2iD', label: 'Carrera desarrolladora' },
-    { value: 'Chiapas', label: 'Cobertura estatal' },
-  ],
+  banner: {
+    title: 'Tecnología al servicio de un ',
+    highlight: 'Chiapas más limpio',
+    description:
+      'Recolecta conecta rutas, mapas y datos para que la recolección de residuos sea más eficiente en todo el estado.',
+    ctaLabel: 'Conoce la aplicación',
+    ctaHref: '/la-aplicacion',
+  },
 };
