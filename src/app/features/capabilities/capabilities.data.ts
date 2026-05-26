@@ -36,10 +36,9 @@ export const CAPABILITIES_CONTENT: CapabilitiesContent = {
         'distancias, tiempos y consumo de combustible mediante operadores genéticos ' +
         'de selección, cruce y mutación.',
       items: [
-        { text: 'Optimización multiobjetivo: tiempo, distancia y combustible' },
+        { text: 'Optimización multiobjetivo: tiempo, distancia' },
         { text: 'Convergencia rápida en espacios de búsqueda grandes' },
         { text: 'Adaptación dinámica ante cambios en el mapa de rutas' },
-        { text: 'Cobertura garantizada de todas las zonas asignadas' },
       ],
     },
     {
@@ -51,7 +50,6 @@ export const CAPABILITIES_CONTENT: CapabilitiesContent = {
         'el camión recolector y conocer el tiempo estimado de llegada a su domicilio.',
       items: [
         { text: 'Rastreo GPS en tiempo real del vehículo recolector' },
-        { text: 'Estimación de tiempo de llegada (ETA) por zona' },
         { text: 'Visualización de zonas y rutas activas en el mapa' },
         { text: 'Alertas de proximidad para el ciudadano' },
       ],
@@ -66,9 +64,7 @@ export const CAPABILITIES_CONTENT: CapabilitiesContent = {
         'la atención según nivel de urgencia.',
       items: [
         { text: 'Clasificación automática por tipo y categoría de residuo' },
-        { text: 'Análisis de urgencia y asignación de prioridad' },
-        { text: 'Extracción de ubicación desde lenguaje natural' },
-        { text: 'Agrupación inteligente de reportes por sector geográfico' },
+        { text: 'Asignación de prioridad' },
       ],
     },
   ],

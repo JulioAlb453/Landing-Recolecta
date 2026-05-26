@@ -15,10 +15,10 @@ export const PROJECT_CONTENT: ProjectContent = {
   kicker: 'El problema que resolvemos',
   title: 'Gestión inteligente de recolección de residuos',
   description:
-    'En muchas comunidades de Chiapas los camiones recolectores son escasos y sus ' +
-    'recorridos poco eficientes. Recolecta es una aplicación que centraliza la ' +
-    'gestión y localización de las unidades recolectoras, conectando a operadores ' +
-    'y ciudadanos en tiempo real para que ninguna zona quede sin atención.',
+    'La gestion de residuos sólidos en el municipio de Suchiapas presenta una falla ' +
+    'estructural de cobertura que traciende lo logístico para convertirsee en una ' +
+    'emergencia de salud pública latente, especialmente en las zonas de periféricas y rurales ' +
+    'y ciudadanos en tiempo real para que ninguna zona quede sin atención.  ',
   cta: {
     label: 'Conocer rutas inteligentes',
     routerLink: '/funcionalidades',
