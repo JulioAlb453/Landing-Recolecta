@@ -1,4 +1,4 @@
-export type CapabilityIcon = 'route' | 'map' | 'nlp';
+export type CapabilityIcon = 'route' | 'map' | 'nlp' | 'risk';
 
 export interface CapabilityItem {
   readonly text: string;
@@ -23,8 +23,9 @@ export const CAPABILITIES_CONTENT: CapabilitiesContent = {
   kicker: 'Tecnología de vanguardia',
   title: 'Funcionalidades del sistema',
   subtitle:
-    'Recolecta integra inteligencia artificial, visualización geoespacial y ' +
-    'procesamiento de lenguaje natural para transformar la gestión de residuos en Chiapas.',
+    'Recolecta integra inteligencia artificial, visualización geoespacial, ' +
+    'predicción de riesgos en rutas y procesamiento de lenguaje natural para ' +
+    'transformar la gestión de residuos en Chiapas.',
 
   capabilities: [
     {
@@ -65,6 +66,20 @@ export const CAPABILITIES_CONTENT: CapabilitiesContent = {
       items: [
         { text: 'Clasificación automática por tipo y categoría de residuo' },
         { text: 'Asignación de prioridad' },
+      ],
+    },
+    {
+      icon: 'risk',
+      pill: 'ML · Random Forest',
+      title: 'Predicción de riesgos de ruta',
+      description:
+        'Modelo de Random Forest entrenado con historial operativo, clima y reportes ' +
+        'para anticipar retrasos en la ruta establecida y planificar la recolección ' +
+        'con mayor anticipación.',
+      items: [
+        { text: 'Estimación de probabilidad de retraso por ruta' },
+        { text: 'Calendario de eventos que pueden dificultar la recolección' },
+        { text: 'Visualizacion de rutas con mayor propensión a incidencias' },
       ],
     },
   ],
