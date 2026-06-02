@@ -71,7 +71,7 @@ export const CAPABILITIES_CONTENT: CapabilitiesContent = {
     {
       icon: 'risk',
       pill: 'ML · Random Forest',
-      title: 'Predicción de riesgos de ruta',
+      title: 'Predicción de retrasos de ruta',
       description:
         'Modelo de Random Forest entrenado con historial operativo, clima y reportes ' +
         'para anticipar retrasos en la ruta establecida y planificar la recolección ' +
