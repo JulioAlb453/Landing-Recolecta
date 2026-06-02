@@ -1,69 +1,217 @@
-<section [@projectEnter] class="bg-brand-cream pb-20 pt-20 md:pb-28 md:pt-28">
-  <div class="mx-auto max-w-6xl px-6">
+<section [@projectEnter] class="bg-brand-cream">
 
-    <!-- Marca orgánica superior -->
-    <header class="project-enter-item mb-12 flex flex-col items-center gap-4 text-center">
-      <div class="flex items-center gap-3" aria-hidden="true">
-        <span class="h-px w-12 bg-brand-dark/30"></span>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-             fill="currentColor" class="h-4 w-4 text-brand-dark/50">
-          <path d="M17 8C8 10 5.9 16.17 3.82 22h1.9C7 19 11 14 21 12c0 0-2-9-12-10
-                   0 0 7 0 8 6Z"/>
-        </svg>
-        <span class="h-px w-12 bg-brand-dark/30"></span>
+  <!-- Banda institucional superior -->
+  <div class="relative overflow-hidden bg-brand-panel">
+    <!-- Barra de acento tipo gobierno -->
+    <div class="h-1.5 w-full bg-gradient-to-r from-brand-dark via-brand-soft to-brand-border"></div>
+
+    <div class="mx-auto max-w-6xl px-6 py-12 md:py-16">
+      <!-- Migas / dependencia -->
+      <nav class="project-enter-item mb-6 flex flex-wrap items-center gap-2 text-[0.7rem]
+                  font-semibold uppercase tracking-[0.18em] text-brand-cream/70" aria-label="Ruta">
+        <a routerLink="/" class="transition hover:text-brand-soft">Inicio</a>
+        <span aria-hidden="true">/</span>
+        <span class="text-brand-soft">La aplicación</span>
+      </nav>
+
+      <div class="project-enter-item flex items-center gap-3">
+        <span class="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-brand-soft/15
+                     text-brand-soft ring-1 ring-brand-soft/30">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+               stroke-linejoin="round" class="h-5 w-5">
+            <path d="M3 21h18"/>
+            <path d="M5 21V7l7-4 7 4v14"/>
+            <path d="M9 21v-6h6v6"/>
+            <path d="M9 11h.01M15 11h.01"/>
+          </svg>
+        </span>
+        <span class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-cream/85">
+          {{ content.institution }}
+        </span>
       </div>
-      <span class="text-[0.65rem] font-semibold uppercase tracking-[0.28em] text-brand-dark">
-        {{ content.kicker }}
-      </span>
-    </header>
 
-    <!-- Bloque principal: marca + texto -->
-    <div
-      class="grid gap-14 md:grid-cols-[minmax(0,360px)_minmax(0,1fr)]
-             md:items-center md:gap-20 lg:gap-24">
+      <h1 class="project-enter-item mt-6 max-w-3xl text-3xl font-extrabold leading-tight
+                 tracking-tight text-brand-cream md:text-5xl">
+        {{ content.title }}
+      </h1>
 
-      <!-- Marca simplificada -->
-      <div
-        class="project-enter-item relative overflow-hidden rounded-3xl border border-brand-soft/20 bg-white px-6 py-8 text-center shadow-[0_20px_45px_-30px_rgba(14,31,8,0.22)]">
-        <span
-          class="absolute -right-16 -top-16 h-36 w-36 rounded-full bg-brand-soft/15"
-          aria-hidden="true"></span>
+      <p class="project-enter-item mt-5 max-w-2xl text-base leading-relaxed text-brand-cream/80 md:text-lg">
+        {{ content.heroSubtitle }}
+      </p>
+    </div>
+  </div>
 
-        <div
-          class="relative mx-auto flex h-[360px] max-h-[58vh] w-full max-w-[230px] items-center justify-center
-                 overflow-hidden rounded-[2rem] bg-brand-soft/10 p-3 ring-1 ring-brand-soft/25 sm:h-[420px]">
-          <img
-            src="/img-recolecta.webp"
-            [alt]="content.imageAlt"
-            class="h-full w-full object-contain" />
+  <!-- Sección de diagnóstico y problemática -->
+  <div class="bg-brand-deepest px-6 py-14 md:py-20">
+    <div class="mx-auto max-w-6xl">
+
+      <!-- Diagnóstico municipal -->
+      <header class="project-enter-item mb-12 md:mb-16">
+        <div class="mb-5 flex items-center gap-3">
+          <span class="h-px w-8 bg-brand-soft" aria-hidden="true"></span>
+          <p class="text-xs font-semibold uppercase tracking-[0.22em] text-brand-soft">
+            {{ content.diagnosis.label }}
+          </p>
         </div>
 
-        <p class="relative mt-7 text-3xl font-extrabold tracking-tight text-brand-ink">
-          Recolecta
+        <h2 class="max-w-3xl text-2xl font-extrabold leading-tight tracking-tight text-brand-cream md:text-4xl">
+          {{ content.diagnosis.title }}
+        </h2>
+
+        <p class="mt-5 max-w-3xl text-base leading-relaxed text-brand-cream/75 md:text-lg">
+          {{ content.diagnosis.description }}
         </p>
-        <p class="relative mx-auto mt-3 max-w-xs text-sm leading-relaxed text-brand-ink-soft">
-          Plataforma digital para visualizar la cobertura de las rutas de recolección de residuos.
-        </p>
+
+        <aside
+          class="mt-8 max-w-3xl border-l-4 border-brand-accent-muted bg-brand-accent-muted/10 px-5 py-4 md:px-6 md:py-5">
+          <p class="text-xs font-bold uppercase tracking-[0.18em] text-brand-accent-muted">
+            {{ content.diagnosis.alertTitle }}
+          </p>
+          <p class="mt-2 text-sm leading-relaxed text-brand-cream/80 md:text-base">
+            {{ content.diagnosis.alertText }}
+          </p>
+        </aside>
+      </header>
+
+      <!-- Problemáticas identificadas -->
+      <section class="project-enter-item mb-14 md:mb-16">
+        <div class="mb-8 flex items-center gap-3">
+          <span class="h-px w-8 bg-brand-soft" aria-hidden="true"></span>
+          <h3 class="text-xs font-bold uppercase tracking-[0.22em] text-brand-soft">
+            {{ content.identifiedProblemsTitle }}
+          </h3>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          @for (problem of content.identifiedProblems; track problem.title) {
+            <article
+              class="flex flex-col gap-4 rounded-xl border border-brand-cream/8 bg-brand-panel/60 p-5
+                     transition hover:border-brand-soft/25">
+              <span
+                class="grid h-9 w-9 place-items-center rounded-lg bg-brand-soft/15 text-brand-soft
+                       ring-1 ring-brand-soft/20"
+                aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                     stroke-linejoin="round" class="h-4 w-4">
+                  <path d="M12 9v4"/>
+                  <path d="M12 17h.01"/>
+                  <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/>
+                </svg>
+              </span>
+              <div class="flex flex-col gap-2">
+                <h4 class="text-sm font-bold text-brand-cream">{{ problem.title }}</h4>
+                <p class="text-sm leading-relaxed text-brand-cream/65">{{ problem.description }}</p>
+              </div>
+            </article>
+          }
+        </div>
+      </section>
+
+      <!-- Impactos directos -->
+      <section class="project-enter-item">
+        <div class="mb-8 flex items-center gap-3">
+          <span class="h-px w-8 bg-brand-soft" aria-hidden="true"></span>
+          <h3 class="text-xs font-bold uppercase tracking-[0.22em] text-brand-soft">
+            {{ content.directImpactsTitle }}
+          </h3>
+        </div>
+
+        <ul class="flex flex-col gap-4">
+          @for (impact of content.directImpacts; track impact.category) {
+            <li
+              class="flex flex-col gap-4 rounded-xl border border-brand-cream/8 bg-brand-panel/60 p-5
+                     sm:flex-row sm:items-center sm:gap-6">
+              <span
+                class="inline-flex w-fit shrink-0 items-center rounded-full bg-brand-accent-muted/20 px-4 py-1.5
+                       text-[0.65rem] font-bold uppercase tracking-[0.16em] text-brand-accent-muted">
+                {{ impact.category }}
+              </span>
+              <p class="text-sm leading-relaxed text-brand-cream/75 md:text-base">
+                {{ impact.text }}
+              </p>
+            </li>
+          }
+        </ul>
+      </section>
+    </div>
+  </div>
+
+  <!-- Ficha de la aplicación -->
+  <div class="mx-auto max-w-6xl px-6 py-14 md:py-20">
+
+    <!-- Ficha de la aplicación: mockup + descripción -->
+    <div
+      class="grid gap-12 md:grid-cols-[minmax(0,340px)_minmax(0,1fr)]
+             md:items-stretch md:gap-16 lg:gap-20">
+
+      <!-- Ficha oficial con mockup -->
+      <div
+        class="project-enter-item flex flex-col overflow-hidden rounded-xl border border-brand-dark/15
+               bg-white shadow-[0_20px_45px_-30px_rgba(14,31,8,0.25)]">
+        <div class="flex items-center gap-2 border-b border-brand-dark/10 bg-brand-cream/60 px-5 py-3">
+          <span class="h-2 w-2 rounded-full bg-brand-dark" aria-hidden="true"></span>
+          <span class="text-[0.65rem] font-bold uppercase tracking-[0.18em] text-brand-ink-soft">
+            Aplicación oficial
+          </span>
+        </div>
+
+        <div class="flex flex-1 flex-col items-center px-6 py-8 text-center">
+          <div
+            class="flex h-[360px] max-h-[58vh] w-full max-w-[230px] items-center justify-center
+                   overflow-hidden rounded-[2rem] bg-brand-soft/10 p-3 ring-1 ring-brand-soft/25 sm:h-[420px]">
+            <img
+              src="/img-recolecta.webp"
+              [alt]="content.imageAlt"
+              class="h-full w-full object-contain" />
+          </div>
+
+          <p class="mt-6 text-2xl font-extrabold tracking-tight text-brand-ink">
+            Recolecta
+          </p>
+          <p class="mx-auto mt-2 max-w-xs text-sm leading-relaxed text-brand-ink-soft">
+            Plataforma digital para visualizar la cobertura de las rutas de recolección de residuos.
+          </p>
+        </div>
       </div>
 
-      <!-- Texto (derecha) -->
-      <div class="flex flex-col gap-6 md:pl-4">
-        <h1
-          class="project-enter-item text-3xl font-bold leading-snug tracking-tight
-                 text-brand-ink md:text-4xl">
-          {{ content.title }}
-        </h1>
+      <!-- Descripción institucional -->
+      <div class="flex flex-col gap-6">
+        <span class="project-enter-item inline-flex w-fit items-center rounded-md
+                     bg-brand-dark/10 px-3 py-1 text-[0.65rem] font-bold uppercase
+                     tracking-[0.18em] text-brand-darker">
+          {{ content.kicker }}
+        </span>
 
-        <p
-          class="project-enter-item text-base leading-relaxed text-brand-ink
-                 md:text-[1.05rem]">
+        <h2 class="project-enter-item text-2xl font-bold leading-snug tracking-tight text-brand-ink md:text-3xl">
+          ¿Qué es Recolecta?
+        </h2>
+
+        <p class="project-enter-item text-base leading-relaxed text-brand-ink md:text-[1.05rem]">
           {{ content.description }}
         </p>
 
+        <ul class="project-enter-item flex flex-col gap-3 border-t border-brand-dark/10 pt-6">
+          @for (item of content.highlights; track item) {
+            <li class="flex items-start gap-3 text-sm text-brand-ink-soft md:text-base">
+              <span class="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full
+                           bg-brand-dark/10 text-brand-dark" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                     stroke-linejoin="round" class="h-3 w-3">
+                  <path d="M20 6 9 17l-5-5"/>
+                </svg>
+              </span>
+              <span>{{ item }}</span>
+            </li>
+          }
+        </ul>
+
         <a
           [routerLink]="content.cta.routerLink"
-          class="project-enter-item inline-flex w-fit items-center gap-2 rounded-full bg-brand-card px-6 py-3
-                 text-sm font-semibold text-brand-cream shadow-sm transition hover:bg-brand-dark">
+          class="project-enter-item mt-2 inline-flex w-fit items-center gap-2 rounded-md bg-brand-dark px-6 py-3
+                 text-sm font-semibold text-brand-cream shadow-sm transition hover:bg-brand-darker">
           {{ content.cta.label }}
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                fill="none" stroke="currentColor" stroke-width="2"
