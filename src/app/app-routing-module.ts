@@ -24,6 +24,13 @@ const routes: Routes = [
         (m) => m.CapabilitiesModule,
       ),
   },
+  {
+    path: 'eliminacion-de-datos',
+    loadChildren: () =>
+      import('./features/data-deletion/data-deletion.module').then(
+        (m) => m.DataDeletionModule,
+      ),
+  },
   // {
   //   path: 'mision-y-vision',
   //   loadChildren: () =>

@@ -23,6 +23,10 @@ export interface FooterContent {
   readonly socials: readonly SocialLink[];
   readonly bottom: {
     readonly credits: string;
+    readonly legalLink: {
+      readonly label: string;
+      readonly routerLink: string;
+    };
   };
 }
 
@@ -63,5 +67,9 @@ export const FOOTER_CONTENT: FooterContent = {
   ],
   bottom: {
     credits: 'Hecho por estudiantes de IT2iD · Versión demo 2026',
+    legalLink: {
+      label: 'Eliminación de datos personales (LFPDPPP)',
+      routerLink: '/eliminacion-de-datos',
+    },
   },
 };

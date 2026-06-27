@@ -1,0 +1,85 @@
+<section [@aboutEnter] class="relative overflow-hidden bg-brand-cream pb-0 pt-14 md:pt-20">
+  <span
+    class="wave-blob wave-blob--soft pointer-events-none absolute -left-20 top-16 h-64 w-64 rounded-full
+           bg-brand-soft/20 blur-3xl"
+    aria-hidden="true"></span>
+  <span
+    class="wave-blob wave-blob--accent pointer-events-none absolute right-8 top-10 h-28 w-28 rotate-12
+           rounded-[2rem] bg-brand-accent-light/25 blur-sm"
+    aria-hidden="true"></span>
+
+  <div class="relative mx-auto max-w-3xl px-6">
+    <p class="about-enter-item text-xs font-semibold uppercase tracking-[0.2em] text-brand-dark">
+      — {{ content.kicker }}
+    </p>
+
+    <h1 class="about-enter-item mt-4 text-4xl font-extrabold tracking-tight text-brand-ink md:text-5xl">
+      {{ content.title }}
+    </h1>
+
+    <p class="about-enter-item mt-6 text-base leading-relaxed text-brand-ink-soft md:text-[1.05rem]">
+      {{ content.intro }}
+    </p>
+
+    @for (section of content.sections; track section.title) {
+      <div class="about-enter-item mt-10">
+        <h2 class="text-xl font-bold text-brand-ink md:text-2xl">
+          {{ section.title }}
+        </h2>
+        @for (paragraph of section.paragraphs; track paragraph) {
+          <p class="mt-4 text-base leading-relaxed text-brand-ink-soft md:text-[1.05rem]">
+            {{ paragraph }}
+          </p>
+        }
+      </div>
+    }
+
+    <div
+      class="about-enter-item mt-10 rounded-3xl border-2 border-brand-accent/40 bg-brand-accent-muted/30 px-6 py-8 md:px-8">
+      <h2 class="text-xl font-bold text-brand-ink md:text-2xl">
+        Cómo solicitar la eliminación de sus datos
+      </h2>
+      <ol class="mt-5 flex list-decimal flex-col gap-3 pl-5 text-brand-ink-soft">
+        @for (step of content.requestSteps; track step) {
+          <li class="leading-relaxed">{{ step }}</li>
+        }
+      </ol>
+      <p class="mt-6 text-base leading-relaxed text-brand-ink-soft">
+        Correo de contacto para solicitudes:
+        <a
+          [href]="'mailto:' + content.requestEmail + '?subject=Solicitud%20de%20eliminaci%C3%B3n%20de%20datos%20personales'"
+          class="font-semibold text-brand-dark underline decoration-brand-soft/60 underline-offset-2 transition
+                 hover:text-brand-deepest hover:decoration-brand-soft">
+          {{ content.requestEmail }}
+        </a>
+      </p>
+    </div>
+
+    <p class="about-enter-item mt-8 text-sm leading-relaxed text-brand-ink-soft/90 md:text-base">
+      {{ content.closingNote }}
+    </p>
+  </div>
+</section>
+
+<app-wave-divider variant="layered" fill="var(--color-brand-panel)" />
+
+<section class="relative overflow-hidden bg-brand-panel px-6 py-14 md:py-16">
+  <div class="about-enter-item relative mx-auto max-w-3xl text-center">
+    <p class="text-sm font-semibold uppercase tracking-[0.18em] text-brand-soft">
+      Recolecta · IT2iD
+    </p>
+    <p class="mt-4 text-lg leading-relaxed text-brand-cream/85 md:text-xl">
+      Respetamos su privacidad y nos comprometemos a tratar sus datos personales conforme a la legislación mexicana.
+    </p>
+    <a
+      routerLink="/"
+      appWaveEffect
+      class="waves-effect mt-7 inline-flex items-center gap-2 rounded-full bg-brand-soft px-6 py-3 text-sm font-semibold
+             text-brand-deepest shadow-lg transition hover:bg-brand-border">
+      Volver al inicio
+      <app-icon name="arrow_forward" size="xs" />
+    </a>
+  </div>
+</section>
+
+<app-wave-divider variant="asymmetric" fill="var(--color-brand-panel)" [flip]="true" />
