@@ -8,6 +8,12 @@ export interface DataDeletionContent {
   }[];
   readonly requestEmail: string;
   readonly requestSteps: readonly string[];
+  readonly accountDeactivation: {
+    readonly title: string;
+    readonly paragraphs: readonly string[];
+    readonly requestSteps: readonly string[];
+    readonly mailtoSubject: string;
+  };
   readonly closingNote: string;
 }
 
@@ -46,6 +52,22 @@ export const DATA_DELETION_CONTENT: DataDeletionContent = {
     'Describa claramente que desea ejercer su derecho de cancelación (eliminación) conforme a la LFPDPPP.',
     'Adjunte, si lo considera necesario, documentación que acredite su identidad como titular de los datos.',
   ],
+  accountDeactivation: {
+    title: 'Baja de cuenta de usuario',
+    paragraphs: [
+      'Además del derecho a la eliminación de datos personales, puede solicitar la baja de su cuenta de usuario en Recolecta ' +
+        'en cualquier momento. Al dar de baja su cuenta, dejará de tener acceso a la aplicación y a sus funcionalidades.',
+      'Estamos obligados a atender su solicitud de baja y a desactivar o eliminar su cuenta, así como los datos personales ' +
+        'asociados a ella, salvo aquellos que debamos conservar por obligación legal.',
+    ],
+    requestSteps: [
+      'Envíe un correo electrónico a recolectait2id@gmail.com con el asunto «Solicitud de baja de cuenta de usuario».',
+      'Indique su nombre completo y el correo electrónico registrado en Recolecta.',
+      'Confirme que desea la baja definitiva de su cuenta y, si aplica, la eliminación de los datos vinculados a ella.',
+      'Adjunte, si lo considera necesario, documentación que acredite su identidad como titular de la cuenta.',
+    ],
+    mailtoSubject: 'Solicitud de baja de cuenta de usuario',
+  },
   closingNote:
     'Atenderemos su solicitud en un plazo no mayor a 20 días hábiles contados a partir de su recepción, ' +
     'conforme a lo dispuesto por la LFPDPPP. Le informaremos por correo electrónico sobre el resultado de su solicitud.',
