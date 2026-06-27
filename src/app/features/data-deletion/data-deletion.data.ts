@@ -11,8 +11,7 @@ export interface DataDeletionContent {
   readonly accountDeactivation: {
     readonly title: string;
     readonly paragraphs: readonly string[];
-    readonly requestSteps: readonly string[];
-    readonly mailtoSubject: string;
+    readonly notes: readonly string[];
   };
   readonly closingNote: string;
 }
@@ -55,18 +54,13 @@ export const DATA_DELETION_CONTENT: DataDeletionContent = {
   accountDeactivation: {
     title: 'Baja de cuenta de usuario',
     paragraphs: [
-      'Además del derecho a la eliminación de datos personales, puede solicitar la baja de su cuenta de usuario en Recolecta ' +
-        'en cualquier momento. Al dar de baja su cuenta, dejará de tener acceso a la aplicación y a sus funcionalidades.',
-      'Estamos obligados a atender su solicitud de baja y a desactivar o eliminar su cuenta, así como los datos personales ' +
-        'asociados a ella, salvo aquellos que debamos conservar por obligación legal.',
+      'Puede solicitar la baja de su cuenta de usuario directamente desde la aplicación Recolecta, sin necesidad de enviar un correo electrónico.',
+      'Al dar de baja su cuenta, esta quedará inactiva: ya no podrá iniciar sesión ni utilizar las funcionalidades de la aplicación.',
     ],
-    requestSteps: [
-      'Envíe un correo electrónico a recolectait2id@gmail.com con el asunto «Solicitud de baja de cuenta de usuario».',
-      'Indique su nombre completo y el correo electrónico registrado en Recolecta.',
-      'Confirme que desea la baja definitiva de su cuenta y, si aplica, la eliminación de los datos vinculados a ella.',
-      'Adjunte, si lo considera necesario, documentación que acredite su identidad como titular de la cuenta.',
+    notes: [
+      'Si durante su uso registró algún punto de recolección, esa información se conservará porque es necesaria para el funcionamiento y la operación de la aplicación.',
+      'La baja de cuenta implica la desactivación de su acceso, no la eliminación de los datos operativos vinculados a puntos de recolección ya registrados.',
     ],
-    mailtoSubject: 'Solicitud de baja de cuenta de usuario',
   },
   closingNote:
     'Atenderemos su solicitud en un plazo no mayor a 20 días hábiles contados a partir de su recepción, ' +

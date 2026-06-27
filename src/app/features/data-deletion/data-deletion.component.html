@@ -65,23 +65,16 @@
           {{ paragraph }}
         </p>
       }
-      <h3 class="mt-6 text-lg font-semibold text-brand-ink">
-        Cómo solicitar la baja de su cuenta
-      </h3>
-      <ol class="mt-4 flex list-decimal flex-col gap-3 pl-5 text-brand-ink-soft">
-        @for (step of content.accountDeactivation.requestSteps; track step) {
-          <li class="leading-relaxed">{{ step }}</li>
+      <ul class="mt-6 flex list-none flex-col gap-3 pl-0">
+        @for (note of content.accountDeactivation.notes; track note) {
+          <li class="flex items-start gap-3 text-brand-ink-soft">
+            <span
+              class="mt-1.5 h-2.5 w-2.5 shrink-0 rounded-full bg-brand-panel/60"
+              aria-hidden="true"></span>
+            <span class="leading-relaxed">{{ note }}</span>
+          </li>
         }
-      </ol>
-      <p class="mt-6 text-base leading-relaxed text-brand-ink-soft">
-        Correo de contacto para solicitudes:
-        <a
-          href="mailto:recolectait2id@gmail.com?subject=Solicitud%20de%20baja%20de%20cuenta%20de%20usuario"
-          class="font-semibold text-brand-dark underline decoration-brand-soft/60 underline-offset-2 transition
-                 hover:text-brand-deepest hover:decoration-brand-soft">
-          {{ content.requestEmail }}
-        </a>
-      </p>
+      </ul>
     </div>
 
     <p class="about-enter-item mt-8 text-sm leading-relaxed text-brand-ink-soft/90 md:text-base">

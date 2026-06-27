@@ -9,6 +9,12 @@ export interface SocialLink {
   readonly href: string;
 }
 
+export interface LegalLink {
+  readonly label: string;
+  readonly href?: string;
+  readonly routerLink?: string;
+}
+
 export interface FooterContent {
   readonly brand: {
     readonly nameBeforeAccent: string;
@@ -23,10 +29,7 @@ export interface FooterContent {
   readonly socials: readonly SocialLink[];
   readonly bottom: {
     readonly credits: string;
-    readonly legalLink: {
-      readonly label: string;
-      readonly routerLink: string;
-    };
+    readonly legalLinks: readonly LegalLink[];
   };
 }
 
@@ -67,9 +70,15 @@ export const FOOTER_CONTENT: FooterContent = {
   ],
   bottom: {
     credits: 'Hecho por estudiantes de IT2iD · Versión demo 2026',
-    legalLink: {
-      label: 'Eliminación de datos personales (LFPDPPP)',
-      routerLink: '/eliminacion-de-datos',
-    },
+    legalLinks: [
+      {
+        label: 'Términos y condiciones',
+        href: 'https://yara-molina.github.io/terminos-condiciones-recolecta/',
+      },
+      {
+        label: 'Eliminación de datos personales (LFPDPPP)',
+        routerLink: '/eliminacion-de-datos',
+      },
+    ],
   },
 };
