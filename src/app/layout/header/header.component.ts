@@ -20,7 +20,7 @@ export class HeaderComponent {
   protected readonly navLinks: ReadonlyArray<NavLink> = [
     { label: 'Inicio', routerLink: '/', exact: true },
     { label: '¿Qué es Recolecta?', routerLink: '/la-aplicacion' },
-    { label: 'Funcionalidades', routerLink: '/funcionalidades' },
+    { label: 'Implementaciones', routerLink: '/funcionalidades' },
     { label: 'Quiénes somos', routerLink: '/quienes-somos' },
     // { label: 'Misión y Visión', routerLink: '/mision-y-vision' },
   ];
